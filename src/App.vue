@@ -1,31 +1,128 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="admin-container">
+    <div class="sidebar-left"><sidebar-left /></div>
+    <div class="main-area"><router-view /></div>
+    <div class="sidebar-right"><sidebar-right /></div>
   </div>
 </template>
+<script>
+import sidebarLeft from "@/components/Sidebarleft.vue"
+import sidebarRight from "@/components/Sidebarright.vue"
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+export default {
+  components:{
+    sidebarLeft,
+    sidebarRight
+  }
 }
-#nav {
-  padding: 30px;
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+ font-family: 'Open Sans', sans-serif;
+}
+.admin-container{
+  display: flex;
+  width:100%;
+}
+.sidebar-left{
+  background: #578A8D;
+  height: 100vh;
+  width:20%;
+  padding:18px;
+  overflow-y: auto;
+}
+.main-area{
+  overflow-x: hidden;
+  overflow-y: auto;
+   width: 60%;
+   padding:30px 18px 0;
+   height: 100vh
+
+}
+.sidebar-right{
+   width: 20%;
+   height: 100vh;
+   overflow-y:auto 
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main-area::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
+}
+.main-area::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main-area::-webkit-scrollbar
+{
+	width: 12px;
+
+}
+
+.main-area::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
+}
+.sidebar-right::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
+}
+.sidebar-right::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+
+}
+
+.sidebar-right::-webkit-scrollbar
+{
+	width: 12px;
+
+}
+
+.sidebar-right::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
+}
+.sidebar-left::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+
+}
+
+.sidebar-left::-webkit-scrollbar
+{
+	width: 12px;
+
+}
+
+.sidebar-left::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ABC4C6;
 }
 </style>
